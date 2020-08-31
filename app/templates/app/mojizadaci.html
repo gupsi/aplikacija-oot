@@ -1,0 +1,30 @@
+{% extends "app/base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div style="padding-top: 20px;">
+  <h4>Lista mojih zadataka</h4>
+  {% if listazadataka_list %}
+    <table class="table table-bordered">
+       <thead class="thead-dark">
+        <tr>
+      <th scope="col">Naziv</th>
+      <th scope="col">Status</th>
+      <th scope="col">Izmjena</th>
+      <th scope="col">Brisanje</th>
+      {%endif%}
+        </tr>
+      </thead>
+  {% for z in listazadataka_list %}
+   <tbody>
+      <td><a href="{{z.get_absolute_url}}">{{z.naziv}}</a></td>
+      <td>{{z.get_status_display}}</td>  
+      <td><a href="{% url 'zadaci-update' z.id %}">Ažuriraj</a></td>
+      <td><a href="{% url 'zadatak-del' z.id %}">Izbriši</a></td>  
+      </tbody>
+      {% endfor %}
+      </table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+
+<h1>Zadatak: {{ listazadataka.naziv }} </h1>
+<p>Opis zadatka: {{listazadataka.opis}}</p>
+<ul>
+<span class="badge badge-primary badge-pill">{{listazadataka.get_status_display}}</span>
+ </ul> 
+
+{% endblock %}

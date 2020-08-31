@@ -1,0 +1,87 @@
+body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+
+ul {
+  margin: 0;
+}
+
+.bg-steel {
+  background-color: #990000;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.btn{
+  position: fixed; 
+  top: 45%;
+  left: 50%;
+}
+
+#mybutton{
+  position: absolute;
+  top: 80%;
+  left: 0%; 
+  
+}
+
+.lgn-container{
+  
+}
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #DC143C;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#div_id_pvremena{
+  width: 500px;
+}
+#div_id_kvremena{
+  width: 500px;
+}
+#div_id_naziv{
+  width: 500px;
+}
+#div_id_opis{
+  width: 500px;
+}
+#div_id_status{
+  width: 500px;
+}
+
+
+

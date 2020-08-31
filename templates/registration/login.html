@@ -1,0 +1,35 @@
+{% extends 'app/baselogin.html' %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+    <div id="content-container" class="container p-none">
+        <div class="lgn-container col-lg-20" style="left: 50%; padding-top: 60px;">
+            <form id="login-form" method="post" 
+                  action="{% url 'login' %}">
+                {% csrf_token %}
+            {% if form.errors %}
+                    <p class=" label label-danger" style="text-align: center;">
+                        Pogrešno korisničko ime ili lozinka
+                    </p>
+                {% endif %}
+                <table class="table">
+                    <tr>
+                        <td><label for="id_username">Korisničko ime:</label></td>
+                        <td><input id="id_username" name="username" 
+                                   type="text" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="id_password">Lozinka:</label></td>
+                        <td><input id="id_password" name="password" 
+                                   type="password" class="form-control"></td>
+                    </tr>
+                </table>
+            
+<button class="button">Prijavi se</button>
+
+            </form>
+        </div>
+    </div>
+    
+{% endblock content %}

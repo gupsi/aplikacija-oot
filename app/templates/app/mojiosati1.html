@@ -1,0 +1,31 @@
+{% extends "app/base.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div style="padding-top: 20px;">
+  <h4>Lista odrađenih sati</h4>
+  <p>Ažurirajte kako bi ste unijeli kraj radnog vremena ! </p>
+  {% if odradjenisati_list %}
+    <table class="table table-bordered">
+       <thead class="thead-dark">
+        <tr>
+      <th scope="col">Datum</th>
+      <th scope="col">Početak vremena</th>
+      <th scope="col">Kraj vremena</th>
+      <th scope="col"></th>
+      {%endif%}
+        </tr>
+      </thead>
+  {% for odradjenisati in odradjenisati_list %}
+   <tbody>
+      <td>{{odradjenisati.datum}}</td>
+      <td>{{odradjenisati.pvremena}}</td> 
+      <td>{{odradjenisati.kvremena}}</td>  
+      <td><a href="{% url 'osati-update' odradjenisati.id %}">Ažuriraj</a></td> 
+      </tbody>
+      {% endfor %}
+      </table>
+</div>
+
+{% endblock %}

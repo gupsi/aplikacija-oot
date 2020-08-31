@@ -1,0 +1,16 @@
+{% extends "app/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h1>Želite li izbrisati?</h1>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <div class="input-group mb-3">
+  <div class="input-group-append">
+    <button type="submit" class="btn btn-danger">Da</button>
+</div>
+</div>
+
+{% endblock %} 

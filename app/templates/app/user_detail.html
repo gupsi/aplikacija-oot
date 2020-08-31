@@ -1,0 +1,22 @@
+{% extends "app/base.html" %}
+
+{% block content %}
+
+<h1>Korisnik: {{ user.get_username }}</h1>
+
+<div style="margin-left:20px;margin-top:20px">
+
+<p><strong>Email:</strong> {{ user.email }}</p>
+<p><strong>Ime:</strong> {{ user.first_name }}</p>
+<p><strong>Prezime:</strong> {{ user.last_name }}</p>
+<p><strong>Naziv firme:</strong> {{ user.profile.nazivfirme }}</p>
+<p><strong>Adresa:</strong> {{ user.profile.adresa }}</p>
+<p><strong>Kontakt:</strong> {{ user.profile.kontakt }}</p>
+</div>
+
+<div>
+	<a class="button1 btn-primary" href="{%url 'kor'%}">Ažuriraj podatke</a>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,48 @@
+{% extends "app/base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<meta http-equiv="refresh" content="600" />
+<style>
+body {
+    background-color: #FFFFE0;
+}
+div {
+    text-align:center;
+}
+</style>
+
+<div id="clockbox"></div>
+
+<script type="text/javascript">
+var tday=["Ned","Pon","Uto","Sri","Čet","Pet","Sub"];
+var tmonth=["Sij","Velj","Ožu","Tra","Svi","Lip","Srp","Kol","Ruj","Lis","Stu","Pro"];
+
+function GetClock(){
+var d=new Date();
+var nday=d.getDay(),nmonth=d.getMonth(),ndate=d.getDate(),nyear=d.getFullYear();
+var nhour=d.getHours(),nmin=d.getMinutes(),nsec=d.getSeconds(),ap;
+
+if(nhour==0){ap=" AM";nhour=12;}
+else if(nhour<12){ap=" AM";}
+else if(nhour==12){ap=" PM";}
+else if(nhour>12){ap=" PM";nhour-=12;}
+
+if(nmin<=9) nmin="0"+nmin;
+<!-- ## if(nsec<=9) nsec="0"+nsec; -->
+
+var clocktext="<span style=\"font:97pt Arial; color:#4682B4;\">"+nhour+":"+nmin+""+ap+"</span> <br> <span style=\"font:14pt Arial; color:#00000 ;\">"+tday[nday]+", "+ndate+" "+tmonth[nmonth]+", "+nyear+"</span>";
+
+document.getElementById('clockbox').innerHTML=clocktext;
+}
+
+GetClock();
+setInterval(GetClock,1000);
+</script>
+
+<a class="weatherwidget-io" href="https://forecast7.com/hr/45d3314d44/rijeka/" data-label_1="RIJEKA" data-label_2="WEATHER" data-icons="Climacons Animated" data-theme="original" >RIJEKA WEATHER</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+
+{%endblock content%}
